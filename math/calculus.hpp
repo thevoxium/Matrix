@@ -1,6 +1,8 @@
 #pragma once
 #include <omp.h>
 
+namespace Math {
+
 template <typename F> double integrate_1d(F f, double a, double b, int n) {
   double h = (b - a) / n;
   double sum = 0.0;
@@ -13,3 +15,9 @@ template <typename F> double integrate_1d(F f, double a, double b, int n) {
   }
   return sum * h;
 }
+
+template <typename F> double differentiate(F f, double x, double h = 1e-6) {
+  return (f(x + h) - f(x - h)) / (2 * h);
+}
+
+} // namespace Math
