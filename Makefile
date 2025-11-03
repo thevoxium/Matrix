@@ -1,6 +1,6 @@
 CXX := g++-15
 CXXFLAGS := -std=c++17 -O3 -fopenmp -Wall -I./math -I./vector
-SRC := $(wildcard *.cpp math/*.cpp)
+SRC := $(wildcard *.cpp src/math/*.cpp)
 OBJ := $(SRC:.cpp=.o)
 TARGET := main
 
